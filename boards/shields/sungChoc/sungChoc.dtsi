@@ -1,19 +1,6 @@
-// This file was generated from a template. Edit it to match your keyboard.
-// See https://zmk.dev/docs/development/hardware-integration/new-shield for more
-// instructions.
-
 #include <dt-bindings/zmk/matrix_transform.h>
 
 #include "sungChoc-layouts.dtsi"
-
-/ {
-    physical_layout0: default_layout { // First physical layout, use different naming for other layouts
-        compatible = "zmk,physical-layout";
-        display-name = "Default Layout";
-        kscan = <&kscan>; // Label of the kscan node, optional if all layouts use the same
-        transform = <&default_transform>; // Label of the matrix transform for this layout
-    };
-};
 
 / {
     chosen {
