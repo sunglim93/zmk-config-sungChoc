@@ -10,7 +10,7 @@
     physical_layout0: default_layout { // First physical layout, use different naming for other layouts
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
-        kscan = <&kscan0>; // Label of the kscan node, optional if all layouts use the same
+        kscan = <&kscan>; // Label of the kscan node, optional if all layouts use the same
         transform = <&default_transform>; // Label of the matrix transform for this layout
     };
 };
@@ -20,7 +20,7 @@
         zmk,physical-layout = &default_layout;
     };
 
-    kscan: kscan {
+    &kscan: kscan {
         // If the hardware does not use a switch matrix, change this to the
         // appropriate driver and update the properties below to match.
         // See https://zmk.dev/docs/config/kscan for supported key scan drivers.
