@@ -1,0 +1,16 @@
+if SHIELD_SUNGCHOC_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "Sung Choc"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif # SHIELD_SUNGCHOC_LEFT
+
+if SHIELD_SUNGCHOC_LEFT || SHIELD_SUNGCHOC_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif # SHIELD_SUNGCHOC_LEFT || SHIELD_SUNGCHOC_RIGHT
