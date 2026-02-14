@@ -8,7 +8,7 @@
         zmk,matrix-transform = &default_transform;
     };
 
-    &kscan0: kscan {
+    kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
         wakeup-source;
