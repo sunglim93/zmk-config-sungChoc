@@ -44,6 +44,16 @@
             tapping-term-ms = <180>;
             flavor = "balanced";
         };
+
+        as_ht: auto_shift_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AUTO_SHIFT_HOLD_TAP";
+            bindings = <&shift>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
     };
 
     combos {
@@ -76,36 +86,36 @@
         };
 
         eq {
-            bindings = <&kp EQUAL>;
+            bindings = <&as EQUAL>;
             key-positions = <8 9>;
             require-prior-idle-ms = <150>;
         };
 
         dash {
-            bindings = <&kp MINUS>;
+            bindings = <&as MINUS>;
             key-positions = <19 20>;
             require-prior-idle-ms = <150>;
         };
 
         fwslash {
-            bindings = <&kp BACKSLASH>;
+            bindings = <&as BACKSLASH>;
             key-positions = <30 31>;
         };
 
         lbracket {
-            bindings = <&kp LEFT_BRACKET>;
+            bindings = <&as LEFT_BRACKET>;
             key-positions = <3 4>;
             require-prior-idle-ms = <150>;
         };
 
         rbracket {
-            bindings = <&kp RIGHT_BRACKET>;
+            bindings = <&as RIGHT_BRACKET>;
             key-positions = <5 6>;
             require-prior-idle-ms = <150>;
         };
 
         grave {
-            bindings = <&kp GRAVE>;
+            bindings = <&as GRAVE>;
             key-positions = <0 1 2>;
         };
 
@@ -135,6 +145,34 @@
             bindings = <&kp N3 &kp A &kp Q &kp H &kp Q &kp C &kp Y &kp B &kp N0 &kp DOT &kp N0>;
             label = "PW2";
         };
+
+        shift: shift {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&macro_press>,
+                <&kp LEFT_SHIFT>;
+
+            label = "SHIFT";
+        };
+
+        as: as {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&macro_param_1to1 &macro_param_1to2 &as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&macro_param_1to1 &macro_param_1to2 &as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>;
+
+            label = "AS";
+        };
     };
 
     keymap {
@@ -143,8 +181,8 @@
         default_layer {
             bindings = <
 &kp Q            &kp W            &kp E            &kp R          &kp T              &kp Y              &kp U  &hold_tap LS(I) I   &kp O         &kp P
-&kp TAB          &hrm LEFT_GUI A  &hrm LEFT_ALT S  &hrm LCTRL D   &hrm LEFT_SHIFT F  &kp G              &kp H  &hrm RIGHT_SHIFT J  &hrm RCTRL K  &hrm RIGHT_ALT L  &hrm LEFT_GUI SEMI  &kp APOSTROPHE
-&kp Z            &kp X            &kp C            &kp V          &kp B              &kp N              &kp M  &kp COMMA           &kp DOT       &kp SLASH
+&kp TAB          &hrm LEFT_GUI A  &hrm LEFT_ALT S  &hrm LCTRL D   &hrm LEFT_SHIFT F  &kp G              &kp H  &hrm RIGHT_SHIFT J  &hrm RCTRL K  &hrm RIGHT_ALT L  &hrm LEFT_GUI SEMI  &as APOSTROPHE
+&kp Z            &kp X            &kp C            &kp V          &kp B              &kp N              &kp M  &as COMMA           &as DOT       &as SLASH
 &lt 5 LG(LS(D))  &sk LEFT_SHIFT   &lt 2 ENTER      &kp BACKSPACE  &lt 3 SPACE        &ht_layer 4 LC(M)
             >;
         };
