@@ -224,9 +224,9 @@
 
         platform_mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &mkp MB3  &mkp MB1  &mmv MOVE_UP    &mkp RCLK       &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans          &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &mkp MB3  &mkp MB1        &mmv MOVE_UP    &mkp RCLK       &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &msc SCRL_DOWN  &msc SCRL_UP    &trans          &trans
 &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
