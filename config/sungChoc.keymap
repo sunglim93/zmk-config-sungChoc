@@ -113,6 +113,12 @@
             bindings = <&sl 1>;
             key-positions = <37 32>;
         };
+
+        altf4 {
+            bindings = <&kp LA(F4)>;
+            key-positions = <1 2 3 6 7 8>;
+            require-prior-idle-ms = <200>;
+        };
     };
 
     macros {
