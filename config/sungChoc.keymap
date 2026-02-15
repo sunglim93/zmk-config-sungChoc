@@ -165,7 +165,7 @@
         ps_at: ps_at {
             compatible = "zmk,behavior-hold-tap";
             label = "PS_AT";
-            bindings = <&alt_tab>, <&kp>;
+            bindings = <&kp>, <&alt_tab>;
 
             #binding-cells = <2>;
             tapping-term-ms = <180>;
@@ -188,6 +188,22 @@
             #binding-cells = <2>;
             tapping-term-ms = <180>;
         };
+
+        ptm_code_block: ptm_code_block {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PTM_CODE_BLOCK";
+            #binding-cells = <0>;
+            bindings = <&ptm_request>, <&ptm_response>;
+        };
+
+        caps: caps {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CAPS";
+            bindings = <&kp>, <&caps_word>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     combos {
@@ -196,66 +212,73 @@
         bootloader {
             bindings = <&bootloader>;
             key-positions = <22 23 24 25 26>;
+            require-prior-idle-ms = <250>;
         };
 
         esc {
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <200>;
         };
 
         tasks {
             bindings = <&kp LC(LA(TAB))>;
             key-positions = <22 24>;
+            require-prior-idle-ms = <200>;
         };
 
         cp {
             bindings = <&kp LC(C)>;
             key-positions = <23 24>;
+            require-prior-idle-ms = <200>;
         };
 
         pst {
             bindings = <&hrm LC(LS(V)) LC(V)>;
             key-positions = <24 25>;
+            require-prior-idle-ms = <200>;
         };
 
         eq {
             bindings = <&as EQUAL>;
             key-positions = <8 9>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <200>;
         };
 
         dash {
             bindings = <&as MINUS>;
             key-positions = <19 20>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <200>;
         };
 
         fwslash {
             bindings = <&as BACKSLASH>;
             key-positions = <30 31>;
+            require-prior-idle-ms = <200>;
         };
 
         lbracket {
             bindings = <&as LEFT_BRACKET>;
             key-positions = <3 4>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <200>;
         };
 
         rbracket {
             bindings = <&as RIGHT_BRACKET>;
             key-positions = <5 6>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <200>;
         };
 
         grave {
             bindings = <&as GRAVE>;
             key-positions = <0 1 2>;
+            require-prior-idle-ms = <200>;
         };
 
         bluetooth_layer {
             bindings = <&sl 1>;
             key-positions = <37 32>;
+            require-prior-idle-ms = <200>;
         };
 
         altf4 {
@@ -264,19 +287,27 @@
             require-prior-idle-ms = <200>;
         };
 
-        bootloaderR {
-            bindings = <&bootloader>;
-            key-positions = <27 28 29 30 31>;
-        };
-
         ps_at {
-            bindings = <&ps_at 0 PRINTSCREEN>;
+            bindings = <&ps_at PRINTSCREEN PRINTSCREEN>;
             key-positions = <22 23>;
+            require-prior-idle-ms = <200>;
         };
 
         del {
             bindings = <&hold_tap LC(DELETE) DELETE>;
             key-positions = <26 25>;
+            require-prior-idle-ms = <200>;
+        };
+
+        cut {
+            bindings = <&kp LC(X)>;
+            key-positions = <25 23>;
+        };
+
+        caps {
+            bindings = <&caps CAPSLOCK 0>;
+            key-positions = <14 17>;
+            require-prior-idle-ms = <200>;
         };
     };
 
@@ -371,11 +402,18 @@
             label = "PTM_TRUNCATED";
         };
 
-        ptm_req_res: ptm_req_res {
+        ptm_request: ptm_request {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp STAR &kp STAR &kp LS(R) &kp E &kp Q &kp U &kp E &kp S &kp T &kp COLON &kp STAR &kp STAR &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp RET &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp RET &kp STAR &kp STAR &kp LS(R) &kp E &kp S &kp P &kp O &kp N &kp S &kp E &kp COLON &kp STAR &kp STAR &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp RET &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW>;
-            label = "PTM_REQ_RES";
+            bindings = <&kp STAR &kp STAR &kp LS(R) &kp E &kp Q &kp U &kp E &kp S &kp T &kp COLON &kp STAR &kp STAR &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp RET &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp RET>;
+            label = "PTM_REQUEST";
+        };
+
+        ptm_response: ptm_response {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp STAR &kp STAR &kp LS(R) &kp E &kp S &kp P &kp O &kp N &kp S &kp E &kp COLON &kp STAR &kp STAR &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp RET &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW>;
+            label = "PTM_RESPONSE";
         };
     };
 
@@ -429,9 +467,9 @@
 
         platform_mouse {
             bindings = <
-&kp LC(F21)           &trans                &trans               &trans               &trans         &mkp MB3      &mkp MB1        &mmv MOVE_UP    &mkp RCLK       &trans
-&trans                &kp LC(LS(NUMBER_1))  &redact 0 LA(LS(R))  &redact 0 LA(LS(T))  &kp LC(LA(N))  &ptm_req_res  &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
-&kp LC(LS(NUMBER_2))  &trans                &trans               &kp LC(LS(K))        &trans         &trans        &msc SCRL_DOWN  &msc SCRL_UP    &trans          &trans
+&kp LC(F21)           &trans                &trans               &trans               &trans         &mkp MB3         &mkp MB1        &mmv MOVE_UP    &mkp RCLK       &trans
+&trans                &kp LC(LS(NUMBER_1))  &redact 0 LA(LS(R))  &redact 0 LA(LS(T))  &kp LC(LA(N))  &ptm_code_block  &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
+&kp LC(LS(NUMBER_2))  &trans                &trans               &kp LC(LS(K))        &trans         &trans           &msc SCRL_DOWN  &msc SCRL_UP    &trans          &trans
 &trans                &trans                &trans               &trans               &trans         &trans
             >;
         };
