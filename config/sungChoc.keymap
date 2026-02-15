@@ -34,15 +34,6 @@
             flavor = "balanced";
         };
 
-        sticky_layer: sticky_layer {
-            compatible = "zmk,behavior-hold-tap";
-            label = "STICKY_LAYER";
-            bindings = <&mo>, <&sk>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <180>;
-        };
-
         hold_tap: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP";
@@ -50,6 +41,16 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <180>;
+            flavor = "balanced";
+        };
+
+        sticky_layer: sticky_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "STICKY_LAYER";
+            bindings = <&mo>, <&sk>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
             flavor = "balanced";
         };
     };
@@ -139,10 +140,10 @@
 
         default_layer {
             bindings = <
-&kp Q          &kp W                       &kp E            &kp R          &kp T              &kp Y              &kp U  &kp I               &kp O         &kp P
+&kp Q          &kp W                       &kp E            &kp R          &kp T              &kp Y              &kp U  &hold_tap I LS(I)   &kp O         &kp P
 &kp TAB        &hrm LEFT_GUI A             &hrm LEFT_ALT S  &hrm LCTRL D   &hrm LEFT_SHIFT F  &kp G              &kp H  &hrm RIGHT_SHIFT J  &hrm RCTRL K  &hrm RIGHT_ALT L  &hrm LEFT_GUI SEMI  &kp ENTER
 &kp Z          &kp X                       &kp C            &kp V          &kp B              &kp N              &kp M  &kp COMMA           &kp DOT       &kp SLASH
-&kp LS(LG(D))  &sticky_layer 2 LEFT_SHIFT  &lt 2 ENTER      &kp BACKSPACE  &lt 3 SPACE        &ht_layer 4 LC(M)
+&kp LS(LG(D))  &sticky_layer 4 LEFT_SHIFT  &lt 2 ENTER      &kp BACKSPACE  &lt 3 SPACE        &ht_layer 4 LC(M)
             >;
         };
 
@@ -175,10 +176,10 @@
 
         desktop {
             bindings = <
-&trans  &trans  &kp LG(UP_ARROW)                     &trans    &trans                                 &trans  &kp C_VOLUME_DOWN  &kp C_MUTE      &kp C_VOLUME_UP   &trans
-&trans  &trans  &hold_tap LG(LC(LA(LEFT))) LG(LEFT)  &kp DOWN  &hold_tap LG(LC(LA(RIGHT))) LG(RIGHT)  &trans  &trans             &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans  &trans
-&trans  &trans  &trans                               &trans    &trans                                 &trans  &trans             &trans          &trans            &trans
-&trans  &trans  &trans                               &trans    &trans                                 &trans
+&kp LC(LG(LA(NUMBER_1)))  &kp LG(LA(LC(NUMBER_2)))  &kp LG(UP_ARROW)                     &trans        &trans                                 &trans  &kp C_VOLUME_DOWN  &kp C_MUTE      &kp C_VOLUME_UP   &trans
+&trans                    &trans                    &hold_tap LG(LC(LA(LEFT))) LG(LEFT)  &kp LG(DOWN)  &hold_tap LG(LC(LA(RIGHT))) LG(RIGHT)  &trans  &trans             &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans  &trans
+&trans                    &trans                    &trans                               &trans        &trans                                 &trans  &trans             &trans          &trans            &trans
+&trans                    &trans                    &trans                               &trans        &trans                                 &trans
             >;
         };
     };
