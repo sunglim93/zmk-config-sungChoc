@@ -161,10 +161,11 @@
         caps: caps {
             compatible = "zmk,behavior-hold-tap";
             label = "CAPS";
-            bindings = <&kp>, <&caps_word>;
+            bindings = <&caps_word>, <&sk>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+            flavor = "balanced";
         };
     };
 
@@ -267,9 +268,14 @@
         };
 
         caps {
-            bindings = <&caps CAPSLOCK 0>;
+            bindings = <&caps CAPSLOCK LEFT_SHIFT>;
             key-positions = <14 17>;
             require-prior-idle-ms = <200>;
+        };
+
+        caps_lock {
+            bindings = <&kp CLCK>;
+            key-positions = <14 17 16 15>;
         };
     };
 
