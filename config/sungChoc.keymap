@@ -124,6 +124,52 @@
             #binding-cells = <0>;
             bindings = <&kp LC(SPACE)>, <&kp LC(LS(SPACE))>;
         };
+
+        burp_dash: burp_dash {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BURP_DASH";
+            #binding-cells = <0>;
+            bindings = <&hold_tap LC(LS(N9)) LS(LC(D))>, <&kp LC(LS(T))>;
+        };
+
+        burp_fwd: burp_fwd {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BURP_FWD";
+            #binding-cells = <0>;
+            bindings = <&kp LC(F)>, <&kp LC(LS(F))>;
+        };
+
+        burp_notes_htmlE: burp_notes_htmlE {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BURP_NOTES_HTMLE";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(N))>, <&kp LC(LA(H))>;
+        };
+
+        ac_vm: ac_vm {
+            compatible = "zmk,behavior-tap-dance";
+            label = "AC_VM";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LS(LC(W)))>, <&kp LS(LC(LA(I)))>;
+        };
+
+        ac_browser: ac_browser {
+            compatible = "zmk,behavior-tap-dance";
+            label = "AC_BROWSER";
+            #binding-cells = <0>;
+            bindings =
+                <&hold_tap LC(LA(LS(V))) LC(LA(LS(Q)))>,
+                <&kp LA(LS(LC(X)))>;
+        };
+
+        ps_at: ps_at {
+            compatible = "zmk,behavior-hold-tap";
+            label = "PS_AT";
+            bindings = <&alt_tab>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+        };
     };
 
     combos {
@@ -204,6 +250,11 @@
             bindings = <&bootloader>;
             key-positions = <27 28 29 30 31>;
         };
+
+        ps_at {
+            bindings = <&ps_at 0 PRINTSCREEN>;
+            key-positions = <22 23>;
+        };
     };
 
     macros {
@@ -275,6 +326,13 @@
             bindings = <&kt LEFT_GUI &kp DOWN &kt LEFT_GUI>;
             label = "FZD";
         };
+
+        alt_tab: alt_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_ALT &kp TAB &kt LEFT_ALT>;
+            label = "ALT_TAB";
+        };
     };
 
     keymap {
@@ -300,10 +358,10 @@
 
         number {
             bindings = <
-&pw1      &pw2    &trans                              &trans                          &trans  &trans      &as N7        &as N8        &as N9        &trans
-&trans    &trans  &trans                              &trans                          &trans  &trans      &trans        &as NUMBER_4  &as N5        &as NUMBER_6  &trans  &trans
-&mkp MB4  &trans  &hold_tap LC(NUMBER_1) LC(PAGE_UP)  &hold_tap LC(N9) LC(PAGE_DOWN)  &trans  &kp PERIOD  &as NUMBER_1  &as NUMBER_2  &as NUMBER_3  &trans
-&trans    &trans  &trans                              &trans                          &kp N0  &trans
+&pw1          &pw2    &trans                              &trans                          &trans  &none       &as N7        &as N8        &as N9        &none
+&trans        &trans  &trans                              &trans                          &trans  &trans      &none         &as NUMBER_4  &as N5        &as NUMBER_6  &none  &none
+&kp LA(LEFT)  &trans  &hold_tap LC(NUMBER_1) LC(PAGE_UP)  &hold_tap LC(N9) LC(PAGE_DOWN)  &trans  &kp PERIOD  &as NUMBER_1  &as NUMBER_2  &as NUMBER_3  &none
+&trans        &trans  &trans                              &trans                          &as N0  &trans
             >;
         };
 
@@ -336,10 +394,10 @@
 
         burp_app_change {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans
+&none              &none          &none      &none        &none      &none          &none        &kp LA(LS(LC(G)))  &none                                  &none
+&burp_dash         &burp_org      &burp_int  &burp_proxy  &burp_rep  &kp LS(F13)    &ac_vm       &kp LA(LS(LC(C)))  &kp LA(LS(LC(B)))                      &kp LA(LS(LC(T)))  &kp LA(LS(LC(Z)))  &kp LA(LS(LC(E)))
+&burp_notes_htmlE  &kp LC(LS(L))  &burp_fwd  &burp_send   &none      &kp LC(LS(A))  &ac_browser  &kp LC(LA(LS(S)))  &hold_tap LC(LS(LA(O))) LA(LC(LS(P)))  &kp LA(LS(V))
+&trans             &trans         &trans     &trans       &trans     &trans
             >;
         };
     };
