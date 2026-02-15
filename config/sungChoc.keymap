@@ -170,6 +170,24 @@
             #binding-cells = <2>;
             tapping-term-ms = <180>;
         };
+
+        truncate: truncate {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TRUNCATE";
+            bindings = <&ptm_truncated>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+        };
+
+        redact: redact {
+            compatible = "zmk,behavior-hold-tap";
+            label = "REDACT";
+            bindings = <&ptm_redacted>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+        };
     };
 
     combos {
@@ -255,6 +273,11 @@
             bindings = <&ps_at 0 PRINTSCREEN>;
             key-positions = <22 23>;
         };
+
+        del {
+            bindings = <&hold_tap LC(DELETE) DELETE>;
+            key-positions = <26 25>;
+        };
     };
 
     macros {
@@ -333,6 +356,27 @@
             bindings = <&kt LEFT_ALT &kp TAB &kt LEFT_ALT>;
             label = "ALT_TAB";
         };
+
+        ptm_redacted: ptm_redacted {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT &kp LS(R) &kp LS(E) &kp LS(D) &kp LS(A) &kp LS(C) &kp LS(T) &kp LS(E) &kp LS(D) &kp RBKT>;
+            label = "PTM_REDACTED";
+        };
+
+        ptm_truncated: ptm_truncated {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT &kp LS(T) &kp LS(R) &kp LS(U) &kp LS(N) &kp LS(C) &kp LS(A) &kp LS(T) &kp LS(E) &kp LS(D) &kp RBKT>;
+            label = "PTM_TRUNCATED";
+        };
+
+        ptm_req_res: ptm_req_res {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp STAR &kp STAR &kp LS(R) &kp E &kp Q &kp U &kp E &kp S &kp T &kp COLON &kp STAR &kp STAR &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp RET &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp RET &kp STAR &kp STAR &kp LS(R) &kp E &kp S &kp P &kp O &kp N &kp S &kp E &kp COLON &kp STAR &kp STAR &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp RET &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW>;
+            label = "PTM_REQ_RES";
+        };
     };
 
     keymap {
@@ -343,7 +387,7 @@
 &kp Q            &kp W            &kp E            &kp R          &kp T              &kp Y        &kp U  &as I               &kp O         &kp P
 &kp TAB          &hrm LEFT_GUI A  &hrm LEFT_ALT S  &hrm LCTRL D   &hrm LEFT_SHIFT F  &kp G        &kp H  &hrm RIGHT_SHIFT J  &hrm RCTRL K  &hrm RIGHT_ALT L  &hrm LEFT_GUI SEMI  &as APOSTROPHE
 &kp Z            &kp X            &kp C            &kp V          &kp B              &kp N        &kp M  &as COMMA           &as DOT       &as SLASH
-&lt 5 LS(LG(D))  &sk LEFT_SHIFT   &lt 2 ENTER      &kp BACKSPACE  &lt 3 SPACE        &lt 4 LC(M)
+&lt 5 LS(LG(D))  &mo 6            &lt 2 ENTER      &kp BACKSPACE  &lt 3 SPACE        &lt 4 LC(M)
             >;
         };
 
@@ -385,10 +429,10 @@
 
         platform_mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &mkp MB3  &mkp MB1        &mmv MOVE_UP    &mkp RCLK       &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &msc SCRL_DOWN  &msc SCRL_UP    &trans          &trans
-&trans  &trans  &trans  &trans  &trans  &trans
+&kp LC(F21)           &trans                &trans               &trans               &trans         &mkp MB3      &mkp MB1        &mmv MOVE_UP    &mkp RCLK       &trans
+&trans                &kp LC(LS(NUMBER_1))  &redact 0 LA(LS(R))  &redact 0 LA(LS(T))  &kp LC(LA(N))  &ptm_req_res  &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
+&kp LC(LS(NUMBER_2))  &trans                &trans               &kp LC(LS(K))        &trans         &trans        &msc SCRL_DOWN  &msc SCRL_UP    &trans          &trans
+&trans                &trans                &trans               &trans               &trans         &trans
             >;
         };
 
