@@ -382,10 +382,10 @@
 
         number {
             bindings = <
-&pw1          &pw2    &trans                              &trans                          &trans  &none       &as N7        &as N8        &as N9        &none
-&trans        &trans  &trans                              &trans                          &trans  &trans      &none         &as NUMBER_4  &as N5        &as NUMBER_6  &none  &none
-&kp LA(LEFT)  &trans  &hold_tap LC(NUMBER_1) LC(PAGE_UP)  &hold_tap LC(N9) LC(PAGE_DOWN)  &trans  &kp PERIOD  &as NUMBER_1  &as NUMBER_2  &as NUMBER_3  &none
-&trans        &trans  &trans                              &trans                          &as N0  &trans
+&pw1      &pw2      &trans                              &trans                          &trans  &none       &as N7        &as N8        &as N9        &none
+&trans    &trans    &trans                              &trans                          &trans  &trans      &none         &as NUMBER_4  &as N5        &as NUMBER_6  &none  &none
+&mkp MB4  &mkp MB5  &hold_tap LC(NUMBER_1) LC(PAGE_UP)  &hold_tap LC(N9) LC(PAGE_DOWN)  &trans  &kp PERIOD  &as NUMBER_1  &as NUMBER_2  &as NUMBER_3  &none
+&trans    &trans    &trans                              &trans                          &as N0  &trans
             >;
         };
 
@@ -409,9 +409,9 @@
 
         platform_mouse {
             bindings = <
-&kp LC(F21)           &trans                &trans               &trans               &trans         &mkp MB3         &mkp MB1        &mmv MOVE_UP    &mkp RCLK       &trans
-&trans                &kp LC(LS(NUMBER_1))  &redact 0 LA(LS(R))  &redact 0 LA(LS(T))  &kp LC(LA(N))  &ptm_code_block  &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
-&kp LC(LS(NUMBER_2))  &trans                &trans               &kp LC(LS(K))        &trans         &trans           &msc SCRL_DOWN  &msc SCRL_UP    &trans          &trans
+&kp LC(F21)           &trans                &trans               &trans               &trans         &mkp MB3         &mkp MB1        &mmv MOVE_UP    &mkp RCLK        &trans
+&trans                &kp LC(LS(NUMBER_1))  &redact 0 LA(LS(R))  &redact 0 LA(LS(T))  &kp LC(LA(N))  &ptm_code_block  &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &trans  &trans
+&kp LC(LS(NUMBER_2))  &trans                &trans               &kp LC(LS(K))        &trans         &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT  &trans
 &trans                &trans                &trans               &trans               &trans         &trans
             >;
         };
