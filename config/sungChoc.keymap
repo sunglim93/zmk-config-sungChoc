@@ -268,8 +268,9 @@
         };
 
         caps_lock {
-            bindings = <&kp CLCK>;
-            key-positions = <14 17 16 15>;
+            bindings = <&kp CAPS>;
+            key-positions = <4 3 5 6>;
+            require-prior-idle-ms = <200>;
         };
 
         prscr_at {
