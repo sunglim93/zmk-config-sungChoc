@@ -52,44 +52,6 @@
             flavor = "balanced";
         };
 
-        fz_left: fz_left {
-            compatible = "zmk,behavior-hold-tap";
-            label = "FZ_LEFT";
-            bindings = <&kp>, <&fzL>;
-
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-        };
-
-        fz_right: fz_right {
-            compatible = "zmk,behavior-hold-tap";
-            label = "FZ_RIGHT";
-            bindings = <&kp>, <&fzR>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-        };
-
-        fz_up: fz_up {
-            compatible = "zmk,behavior-hold-tap";
-            label = "FZ_UP";
-            bindings = <&kp>, <&fzU>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
-
-        fz_down: fz_down {
-            compatible = "zmk,behavior-hold-tap";
-            label = "FZ_DOWN";
-            bindings = <&kp>, <&fzD>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
-
         burp_rep: burp_rep {
             compatible = "zmk,behavior-tap-dance";
             label = "BURP_REP";
@@ -353,46 +315,6 @@
             label = "AS";
         };
 
-        fzL: fzL {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kt LEFT_GUI &kp LEFT &kt LEFT_GUI>;
-            label = "FZL";
-            tap-ms = <150>;
-        };
-
-        fzR: fzR {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kt LEFT_GUI &kp RIGHT &kp LEFT_GUI>;
-            label = "FZR";
-            tap-ms = <150>;
-        };
-
-        fzU: fzU {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kt LEFT_GUI &kp UP_ARROW &kt LEFT_GUI>;
-            label = "FZU";
-            tap-ms = <150>;
-        };
-
-        fzD: fzD {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kt LEFT_GUI &kp DOWN &kt LEFT_GUI>;
-            label = "FZD";
-            tap-ms = <150>;
-        };
-
-        alt_tab: alt_tab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kt LEFT_ALT &kp TAB &kt LEFT_ALT>;
-            label = "ALT_TAB";
-            tap-ms = <100>;
-        };
-
         ptm_redacted: ptm_redacted {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -419,7 +341,7 @@
             #binding-cells = <0>;
             bindings = <&kp STAR &kp STAR &kp LS(R) &kp E &kp S &kp P &kp O &kp N &kp S &kp E &kp COLON &kp STAR &kp STAR &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp RET &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW>;
             label = "PTM_RESPONSE";
-            tap-ms = <50>;
+            tap-ms = <25>;
         };
     };
 
@@ -456,18 +378,18 @@
         navigation {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &hold_tap LC(HOME) HOME  &kp UP    &hold_tap LC(END) END  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                   &kp LEFT  &kp DOWN               &kp RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp LC(LEFT)             &kp LEFT  &kp DOWN               &kp RIGHT  &kp LC(RIGHT)  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &kp PAGE_UP              &trans    &kp PAGE_DOWN          &trans
 &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
-        desktop {
+        media {
             bindings = <
-&kp LC(LG(LA(NUMBER_1)))  &kp LG(LA(LC(NUMBER_2)))  &fz_up LG(LC(LA(UP_ARROW))) 0  &trans                       &trans                         &trans  &kp C_VOLUME_DOWN  &kp C_MUTE      &kp C_VOLUME_UP   &trans
-&trans                    &trans                    &fz_left LG(LC(LA(LEFT))) 0    &fz_down LG(LC(LA(DOWN))) 0  &fz_right LG(LC(LA(RIGHT))) 0  &trans  &trans             &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans  &trans
-&trans                    &trans                    &trans                         &trans                       &trans                         &trans  &trans             &trans          &trans            &trans
-&trans                    &trans                    &trans                         &trans                       &trans                         &trans
+&kp LC(LG(LA(NUMBER_1)))  &kp LG(LA(LC(NUMBER_2)))  &trans  &trans  &trans  &trans  &kp C_VOLUME_DOWN  &kp C_MUTE      &kp C_VOLUME_UP   &trans
+&trans                    &trans                    &trans  &trans  &trans  &trans  &trans             &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans  &trans
+&trans                    &trans                    &trans  &trans  &trans  &trans  &trans             &trans          &trans            &trans
+&trans                    &trans                    &trans  &trans  &trans  &trans
             >;
         };
 
