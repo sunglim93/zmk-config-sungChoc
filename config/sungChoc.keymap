@@ -126,6 +126,11 @@
             key-positions = <1 2 3 6 7 8>;
             require-prior-idle-ms = <200>;
         };
+
+        bootloaderR {
+            bindings = <&bootloader>;
+            key-positions = <27 28 29 30 31>;
+        };
     };
 
     macros {
