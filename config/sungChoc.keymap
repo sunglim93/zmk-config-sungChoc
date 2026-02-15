@@ -358,6 +358,7 @@
             #binding-cells = <0>;
             bindings = <&kt LEFT_GUI &kp LEFT &kt LEFT_GUI>;
             label = "FZL";
+            tap-ms = <100>;
         };
 
         fzR: fzR {
@@ -365,6 +366,7 @@
             #binding-cells = <0>;
             bindings = <&kt LEFT_GUI &kp RIGHT &kp LEFT_GUI>;
             label = "FZR";
+            tap-ms = <100>;
         };
 
         fzU: fzU {
@@ -372,6 +374,7 @@
             #binding-cells = <0>;
             bindings = <&kt LEFT_GUI &kp UP_ARROW &kt LEFT_GUI>;
             label = "FZU";
+            tap-ms = <100>;
         };
 
         fzD: fzD {
@@ -379,6 +382,7 @@
             #binding-cells = <0>;
             bindings = <&kt LEFT_GUI &kp DOWN &kt LEFT_GUI>;
             label = "FZD";
+            tap-ms = <100>;
         };
 
         alt_tab: alt_tab {
@@ -386,6 +390,7 @@
             #binding-cells = <0>;
             bindings = <&kt LEFT_ALT &kp TAB &kt LEFT_ALT>;
             label = "ALT_TAB";
+            tap-ms = <100>;
         };
 
         ptm_redacted: ptm_redacted {
@@ -414,6 +419,7 @@
             #binding-cells = <0>;
             bindings = <&kp STAR &kp STAR &kp LS(R) &kp E &kp S &kp P &kp O &kp N &kp S &kp E &kp COLON &kp STAR &kp STAR &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp RET &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW>;
             label = "PTM_RESPONSE";
+            tap-ms = <100>;
         };
     };
 
