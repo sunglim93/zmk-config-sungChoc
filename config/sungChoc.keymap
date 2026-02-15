@@ -51,6 +51,79 @@
             tapping-term-ms = <200>;
             flavor = "balanced";
         };
+
+        fz_left: fz_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "FZ_LEFT";
+            bindings = <&kp>, <&fzL>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+        };
+
+        fz_right: fz_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "FZ_RIGHT";
+            bindings = <&kp>, <&fzR>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
+
+        fz_up: fz_up {
+            compatible = "zmk,behavior-hold-tap";
+            label = "FZ_UP";
+            bindings = <&kp>, <&fzU>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        fz_down: fz_down {
+            compatible = "zmk,behavior-hold-tap";
+            label = "FZ_DOWN";
+            bindings = <&kp>, <&fzD>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        burp_rep: burp_rep {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BURP_REP";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(R))>, <&kp LC(R)>;
+        };
+
+        burp_proxy: burp_proxy {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BURP_PROXY";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LC(P))>, <&kp LC(T)>;
+        };
+
+        burp_org: burp_org {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BURP_ORG";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(O))>, <&kp LC(O)>;
+        };
+
+        burp_int: burp_int {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BURP_INT";
+            #binding-cells = <0>;
+            bindings = <&hold_tap LC(P) LC(LS(I))>, <&kp LC(I)>;
+        };
+
+        burp_send: burp_send {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BURP_SEND";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SPACE)>, <&kp LC(LS(SPACE))>;
+        };
     };
 
     combos {
@@ -174,6 +247,34 @@
 
             label = "AS";
         };
+
+        fzL: fzL {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_GUI &kp LEFT &kt LEFT_GUI>;
+            label = "FZL";
+        };
+
+        fzR: fzR {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_GUI &kp RIGHT &kp LEFT_GUI>;
+            label = "FZR";
+        };
+
+        fzU: fzU {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_GUI &kp UP_ARROW &kt LEFT_GUI>;
+            label = "FZU";
+        };
+
+        fzD: fzD {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_GUI &kp DOWN &kt LEFT_GUI>;
+            label = "FZD";
+        };
     };
 
     keymap {
@@ -181,10 +282,10 @@
 
         default_layer {
             bindings = <
-&kp Q            &kp W            &kp E            &kp R          &kp T              &kp Y              &kp U  &as I               &kp O         &kp P
-&kp TAB          &hrm LEFT_GUI A  &hrm LEFT_ALT S  &hrm LCTRL D   &hrm LEFT_SHIFT F  &kp G              &kp H  &hrm RIGHT_SHIFT J  &hrm RCTRL K  &hrm RIGHT_ALT L  &hrm LEFT_GUI SEMI  &as APOSTROPHE
-&kp Z            &kp X            &kp C            &kp V          &kp B              &kp N              &kp M  &as COMMA           &as DOT       &as SLASH
-&lt 5 LS(LG(D))  &sk LEFT_SHIFT   &lt 2 ENTER      &kp BACKSPACE  &lt 3 SPACE        &ht_layer 4 LC(M)
+&kp Q            &kp W            &kp E            &kp R          &kp T              &kp Y        &kp U  &as I               &kp O         &kp P
+&kp TAB          &hrm LEFT_GUI A  &hrm LEFT_ALT S  &hrm LCTRL D   &hrm LEFT_SHIFT F  &kp G        &kp H  &hrm RIGHT_SHIFT J  &hrm RCTRL K  &hrm RIGHT_ALT L  &hrm LEFT_GUI SEMI  &as APOSTROPHE
+&kp Z            &kp X            &kp C            &kp V          &kp B              &kp N        &kp M  &as COMMA           &as DOT       &as SLASH
+&lt 5 LS(LG(D))  &sk LEFT_SHIFT   &lt 2 ENTER      &kp BACKSPACE  &lt 3 SPACE        &lt 4 LC(M)
             >;
         };
 
@@ -217,10 +318,10 @@
 
         desktop {
             bindings = <
-&kp LC(LG(LA(NUMBER_1)))  &kp LG(LA(LC(NUMBER_2)))  &kp LG(UP_ARROW)                     &trans        &trans                                 &trans  &kp C_VOLUME_DOWN  &kp C_MUTE      &kp C_VOLUME_UP   &trans
-&trans                    &trans                    &hold_tap LG(LC(LA(LEFT))) LG(LEFT)  &kp LG(DOWN)  &hold_tap LG(LC(LA(RIGHT))) LG(RIGHT)  &trans  &trans             &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans  &trans
-&trans                    &trans                    &trans                               &trans        &trans                                 &trans  &trans             &trans          &trans            &trans
-&trans                    &trans                    &trans                               &trans        &trans                                 &trans
+&kp LC(LG(LA(NUMBER_1)))  &kp LG(LA(LC(NUMBER_2)))  &fz_up LG(LC(LA(UP_ARROW))) 0  &trans                       &trans                         &trans  &kp C_VOLUME_DOWN  &kp C_MUTE      &kp C_VOLUME_UP   &trans
+&trans                    &trans                    &fz_left LG(LC(LA(LEFT))) 0    &fz_down LG(LC(LA(DOWN))) 0  &fz_right LG(LC(LA(RIGHT))) 0  &trans  &trans             &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans  &trans
+&trans                    &trans                    &trans                         &trans                       &trans                         &trans  &trans             &trans          &trans            &trans
+&trans                    &trans                    &trans                         &trans                       &trans                         &trans
             >;
         };
 
@@ -229,6 +330,15 @@
 &trans  &trans  &trans  &trans  &trans  &mkp MB3  &mkp MB1        &mmv MOVE_UP    &mkp RCLK       &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &msc SCRL_DOWN  &msc SCRL_UP    &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        burp_app_change {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
