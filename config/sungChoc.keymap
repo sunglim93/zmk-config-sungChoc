@@ -431,8 +431,8 @@
 
         platform_mouse {
             bindings = <
-&kp LC(F21)           &trans                &trans               &report_macro        &trans         &mkp MB3         &mkp MB1        &mmv MOVE_UP    &mkp RCLK        &trans
-&trans                &kp LC(LS(NUMBER_1))  &redact 0 LA(LS(R))  &redact 0 LA(LS(T))  &kp LC(LA(N))  &ptm_code_block  &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &trans  &trans
+&kp LC(F21)           &trans                &trans               &trans               &trans         &mkp MB3         &mkp MB1        &mmv MOVE_UP    &mkp RCLK        &trans
+&kp LC(F13)           &kp LC(LS(NUMBER_1))  &redact 0 LA(LS(R))  &redact 0 LA(LS(T))  &kp LC(LA(N))  &ptm_code_block  &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &trans  &trans
 &kp LC(LS(NUMBER_2))  &trans                &trans               &kp LC(LS(K))        &trans         &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT  &trans
 &trans                &trans                &trans               &trans               &trans         &trans
             >;
