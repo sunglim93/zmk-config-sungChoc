@@ -377,7 +377,7 @@
             #binding-cells = <0>;
             bindings = <&mkp MB2 &kp P &kp X &kp ENTER>;
             label = "REPORT_MACRO";
-            tap-ms = <200>;
+            tap-ms = <400>;
         };
     };
 
