@@ -291,14 +291,14 @@
     };
 
     macros {
-        pw1: pw1 {
+        fish1: pw1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp N3 &kp A &kp Q &kp H &kp Q &kp C &kp Y &kp B &kp N0 &kp DOT &kp N0 &kp N0>;
             label = "PW1";
         };
 
-        pw2: pw2 {
+        fish2: pw2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp N3 &kp A &kp Q &kp H &kp Q &kp C &kp Y &kp B &kp N0 &kp DOT &kp N0>;
@@ -417,7 +417,7 @@
 
         number {
             bindings = <
-&pw1      &pw2      &trans                              &trans                          &trans  &none       &as N7        &as N8        &as N9        &none
+&fish1    &fish2    &trans                              &trans                          &trans  &none       &as N7        &as N8        &as N9        &none
 &trans    &trans    &trans                              &trans                          &trans  &trans      &none         &as NUMBER_4  &as N5        &as NUMBER_6  &none  &none
 &mkp MB4  &mkp MB5  &hold_tap LC(NUMBER_1) LC(PAGE_UP)  &hold_tap LC(N9) LC(PAGE_DOWN)  &trans  &kp PERIOD  &as NUMBER_1  &as NUMBER_2  &as NUMBER_3  &none
 &trans    &trans    &trans                              &trans                          &as N0  &trans
