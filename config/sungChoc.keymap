@@ -283,6 +283,11 @@
             key-positions = <7 8>;
             require-prior-idle-ms = <150>;
         };
+
+        one-handed-layer {
+            bindings = <&tog 7>;
+            key-positions = <0 1 2 3 6 7 8 9>;
+        };
     };
 
     macros {
@@ -379,6 +384,14 @@
             label = "REPORT_MACRO";
             tap-ms = <200>;
         };
+
+        image_new_tab: image_new_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mkp RCLK &kp I>;
+            label = "IMAGE_NEW_TAB";
+            tap-ms = <400>;
+        };
     };
 
     keymap {
@@ -444,6 +457,15 @@
 &burp_dash         &burp_org      &burp_int  &burp_proxy  &burp_rep  &kp LS(F13)    &ac_vm       &kp LA(LS(LC(C)))  &kp LA(LS(LC(B)))                      &kp LA(LS(LC(T)))  &kp LA(LS(LC(Z)))  &kp LA(LS(LC(E)))
 &burp_notes_htmlE  &kp LC(LS(L))  &burp_fwd  &burp_send   &none      &kp LC(LS(A))  &ac_browser  &kp LC(LA(LS(S)))  &hold_tap LC(LS(LA(O))) LA(LC(LS(P)))  &kp LA(LS(V))
 &trans             &trans         &trans     &trans       &trans     &trans
+            >;
+        };
+
+        one-handed {
+            bindings = <
+&kp LC(KP_MINUS)  &kp LC(PLUS)  &kp UP_ARROW                      &trans                          &hold_tap LC(LS(T)) T  &trans          &trans  &trans  &trans  &trans
+&kp LS(W)         &trans        &kp LEFT                          &kp DOWN                        &kp RIGHT              &image_new_tab  &trans  &trans  &trans  &trans  &trans  &trans
+&trans            &trans        &hold_tap LC(NUMBER_1) LC(PG_UP)  &hold_tap LC(N9) LC(PAGE_DOWN)  &trans                 &trans          &trans  &trans  &trans  &trans
+&trans            &trans        &trans                            &trans                          &trans                 &trans
             >;
         };
     };
