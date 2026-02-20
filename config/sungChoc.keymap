@@ -315,6 +315,11 @@
             bindings = <&tog 7>;
             key-positions = <0 1 2 3 6 7 8 9>;
         };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <11 12>;
+        };
     };
 
     macros {
@@ -427,7 +432,7 @@
         default_layer {
             bindings = <
 &kp Q            &kp W               &kp E            &kp R          &kp T              &kp Y        &kp U  &as I               &kp O         &kp P
-&kp TAB          &hrm LEFT_GUI A     &hrm LEFT_ALT S  &hrm LCTRL D   &hrm LEFT_SHIFT F  &kp G        &kp H  &hrm RIGHT_SHIFT J  &hrm RCTRL K  &hrm RIGHT_ALT L  &hrm LEFT_GUI SEMI  &as APOSTROPHE
+&sl 8            &hrm LEFT_GUI A     &hrm LEFT_ALT S  &hrm LCTRL D   &hrm LEFT_SHIFT F  &kp G        &kp H  &hrm RIGHT_SHIFT J  &hrm RCTRL K  &hrm RIGHT_ALT L  &hrm LEFT_GUI SEMI  &as APOSTROPHE
 &kp Z            &kp X               &kp C            &kp V          &kp B              &kp N        &kp M  &as COMMA           &as DOT       &as SLASH
 &lt 5 LS(LG(D))  &burp_layer_toggle  &lt 2 ENTER      &kp BACKSPACE  &lt 3 SPACE        &lt 4 LC(M)
             >;
@@ -482,7 +487,7 @@
             bindings = <
 &hold_tap LC(NUMBER_1) LC(PAGE_UP)  &hold_tap LC(N9) LC(PG_DN)  &mkp RCLK  &mkp LCLK    &mkp MCLK                          &none          &none        &kp LA(LS(LC(G)))  &none                                  &none
 &burp_dash                          &burp_org                   &burp_int  &burp_proxy  &burp_rep_with_shift LEFT_SHIFT 0  &kp LS(F13)    &ac_vm       &kp LA(LS(LC(C)))  &kp LA(LS(LC(B)))                      &kp LA(LS(LC(T)))  &kp LA(LS(LC(Z)))  &kp LA(LS(LC(E)))
-&burp_notes_htmlE                   &kp LC(LS(L))               &burp_fwd  &burp_send   &none                              &kp LC(LS(A))  &ac_browser  &kp LC(LA(LS(S)))  &hold_tap LC(LS(LA(O))) LA(LC(LS(P)))  &kp LA(LS(V))
+&burp_notes_htmlE                   &kp LC(LS(L))               &burp_fwd  &burp_send   &msc SCRL_DOWN                     &kp LC(LS(A))  &ac_browser  &kp LC(LA(LS(S)))  &hold_tap LC(LS(LA(O))) LA(LC(LS(P)))  &kp LA(LS(V))
 &sl 5                               &trans                      &sl 8      &trans       &trans                             &trans
             >;
         };
@@ -496,7 +501,7 @@
             >;
         };
 
-        layer_8 {
+        left_app_change {
             bindings = <
 &trans             &trans                                 &kp LA(LS(LC(G)))  &trans             &trans             &trans  &trans  &trans  &trans  &trans
 &kp LC(LA(LS(E)))  &kp LC(LA(LS(Z)))                      &kp LC(LA(LS(T)))  &kp LC(LS(LA(B)))  &kp LC(LA(LS(C)))  &ac_vm  &trans  &trans  &trans  &trans  &trans  &trans
