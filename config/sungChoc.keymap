@@ -483,7 +483,7 @@
 &hold_tap LC(NUMBER_1) LC(PAGE_UP)  &hold_tap LC(N9) LC(PG_DN)  &mkp RCLK  &mkp LCLK    &mkp MCLK                          &none          &none        &kp LA(LS(LC(G)))  &none                                  &none
 &burp_dash                          &burp_org                   &burp_int  &burp_proxy  &burp_rep_with_shift LEFT_SHIFT 0  &kp LS(F13)    &ac_vm       &kp LA(LS(LC(C)))  &kp LA(LS(LC(B)))                      &kp LA(LS(LC(T)))  &kp LA(LS(LC(Z)))  &kp LA(LS(LC(E)))
 &burp_notes_htmlE                   &kp LC(LS(L))               &burp_fwd  &burp_send   &none                              &kp LC(LS(A))  &ac_browser  &kp LC(LA(LS(S)))  &hold_tap LC(LS(LA(O))) LA(LC(LS(P)))  &kp LA(LS(V))
-&sticky_OS_layer 5 5                &trans                      &trans     &trans       &trans                             &trans
+&sl 5                               &trans                      &sl 8      &trans       &trans                             &trans
             >;
         };
 
@@ -498,10 +498,10 @@
 
         layer_8 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans
+&trans             &trans                                 &kp LA(LS(LC(G)))  &trans             &trans             &trans  &trans  &trans  &trans  &trans
+&kp LC(LA(LS(E)))  &kp LC(LA(LS(Z)))                      &kp LC(LA(LS(T)))  &kp LC(LS(LA(B)))  &kp LC(LA(LS(C)))  &ac_vm  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LC(LA(LS(V)))  &hold_tap LA(LS(LC(O))) LA(LS(LC(P)))  &kp LA(LS(LC(S)))  &ac_browser        &kp LS(LC(A))      &trans  &trans  &trans  &trans  &trans
+&trans             &trans                                 &trans             &trans             &trans             &trans
             >;
         };
     };
