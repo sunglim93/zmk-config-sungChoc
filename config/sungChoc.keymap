@@ -167,6 +167,33 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        burp_rep_with_shift: burp_rep_with_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BURP_REP_WITH_SHIFT";
+            bindings = <&kp>, <&burp_rep>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
+
+        sticky_OS_layer: sticky_OS_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "STICKY_OS_LAYER";
+            bindings = <&mo>, <&sl>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
+
+        burp_layer_toggle: burp_layer_toggle {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BURP_LAYER_TOGGLE";
+            #binding-cells = <0>;
+            bindings = <&ht_layer 6 A>, <&tog 6>;
+        };
     };
 
     combos {
@@ -399,10 +426,10 @@
 
         default_layer {
             bindings = <
-&kp Q            &kp W            &kp E            &kp R          &kp T              &kp Y        &kp U  &as I               &kp O         &kp P
-&kp TAB          &hrm LEFT_GUI A  &hrm LEFT_ALT S  &hrm LCTRL D   &hrm LEFT_SHIFT F  &kp G        &kp H  &hrm RIGHT_SHIFT J  &hrm RCTRL K  &hrm RIGHT_ALT L  &hrm LEFT_GUI SEMI  &as APOSTROPHE
-&kp Z            &kp X            &kp C            &kp V          &kp B              &kp N        &kp M  &as COMMA           &as DOT       &as SLASH
-&lt 5 LS(LG(D))  &mo 6            &lt 2 ENTER      &kp BACKSPACE  &lt 3 SPACE        &lt 4 LC(M)
+&kp Q            &kp W               &kp E            &kp R          &kp T              &kp Y        &kp U  &as I               &kp O         &kp P
+&kp TAB          &hrm LEFT_GUI A     &hrm LEFT_ALT S  &hrm LCTRL D   &hrm LEFT_SHIFT F  &kp G        &kp H  &hrm RIGHT_SHIFT J  &hrm RCTRL K  &hrm RIGHT_ALT L  &hrm LEFT_GUI SEMI  &as APOSTROPHE
+&kp Z            &kp X               &kp C            &kp V          &kp B              &kp N        &kp M  &as COMMA           &as DOT       &as SLASH
+&lt 5 LS(LG(D))  &burp_layer_toggle  &lt 2 ENTER      &kp BACKSPACE  &lt 3 SPACE        &lt 4 LC(M)
             >;
         };
 
@@ -444,19 +471,19 @@
 
         platform_mouse {
             bindings = <
-&kp LC(F21)           &trans                &trans               &trans               &trans         &mkp MB3         &mkp MB1        &mmv MOVE_UP    &mkp RCLK        &trans
+&kp LC(F21)           &trans                &trans               &trans                 &trans         &mkp MB3         &mkp MB1        &mmv MOVE_UP    &mkp RCLK        &trans
 &report_macro         &kp LC(LS(NUMBER_1))  &redact 0 LA(LS(R))  &truncate 0 LA(LS(T))  &kp LA(LS(N))  &ptm_code_block  &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &trans  &trans
-&kp LC(LS(NUMBER_2))  &trans                &trans               &kp LC(LS(K))        &trans         &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT  &trans
-&trans                &trans                &trans               &trans               &trans         &trans
+&kp LC(LS(NUMBER_2))  &trans                &trans               &kp LC(LS(K))          &trans         &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT  &trans
+&trans                &trans                &trans               &trans                 &trans         &trans
             >;
         };
 
         burp_app_change {
             bindings = <
-&none              &none          &none      &none        &none      &none          &none        &kp LA(LS(LC(G)))  &none                                  &none
-&burp_dash         &burp_org      &burp_int  &burp_proxy  &burp_rep  &kp LS(F13)    &ac_vm       &kp LA(LS(LC(C)))  &kp LA(LS(LC(B)))                      &kp LA(LS(LC(T)))  &kp LA(LS(LC(Z)))  &kp LA(LS(LC(E)))
-&burp_notes_htmlE  &kp LC(LS(L))  &burp_fwd  &burp_send   &none      &kp LC(LS(A))  &ac_browser  &kp LC(LA(LS(S)))  &hold_tap LC(LS(LA(O))) LA(LC(LS(P)))  &kp LA(LS(V))
-&trans             &trans         &trans     &trans       &trans     &trans
+&hold_tap LC(NUMBER_1) LC(PAGE_UP)  &hold_tap LC(N9) LC(PG_DN)  &mkp RCLK  &mkp LCLK    &mkp MCLK                          &none          &none        &kp LA(LS(LC(G)))  &none                                  &none
+&burp_dash                          &burp_org                   &burp_int  &burp_proxy  &burp_rep_with_shift LEFT_SHIFT 0  &kp LS(F13)    &ac_vm       &kp LA(LS(LC(C)))  &kp LA(LS(LC(B)))                      &kp LA(LS(LC(T)))  &kp LA(LS(LC(Z)))  &kp LA(LS(LC(E)))
+&burp_notes_htmlE                   &kp LC(LS(L))               &burp_fwd  &burp_send   &none                              &kp LC(LS(A))  &ac_browser  &kp LC(LA(LS(S)))  &hold_tap LC(LS(LA(O))) LA(LC(LS(P)))  &kp LA(LS(V))
+&sticky_OS_layer 5 5                &tog 0                      &trans     &trans       &trans                             &trans
             >;
         };
 
@@ -466,6 +493,15 @@
 &kp LS(W)         &trans        &kp LEFT                          &kp DOWN                        &kp RIGHT              &image_new_tab  &trans  &trans  &trans  &trans  &trans  &trans
 &trans            &trans        &hold_tap LC(NUMBER_1) LC(PG_UP)  &hold_tap LC(N9) LC(PAGE_DOWN)  &trans                 &trans          &trans  &trans  &trans  &trans
 &trans            &trans        &trans                            &trans                          &trans                 &trans
+            >;
+        };
+
+        layer_8 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
