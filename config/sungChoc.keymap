@@ -194,6 +194,16 @@
             #binding-cells = <0>;
             bindings = <&ht_layer 6 A>, <&tog 6>;
         };
+
+        fz_left_both: fz_left_both {
+            compatible = "zmk,behavior-hold-tap";
+            label = "FZ_LEFT_BOTH";
+            bindings = <&kp>, <&fz_left>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
     };
 
     combos {
@@ -461,7 +471,7 @@
             #binding-cells = <0>;
             bindings = <&kt LEFT_GUI &kp LEFT &kt LEFT_GUI>;
             label = "FZ_LEFT";
-            tap-ms = <200>;
+            tap-ms = <100>;
         };
     };
 
@@ -506,10 +516,10 @@
 
         media {
             bindings = <
-&kp LC(LG(LA(NUMBER_1)))  &kp LG(LA(LC(NUMBER_2)))  &trans    &trans  &trans  &trans  &kp C_VOLUME_DOWN  &kp C_MUTE      &kp C_VOLUME_UP   &trans
-&trans                    &trans                    &fz_left  &trans  &trans  &trans  &trans             &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans  &trans
-&trans                    &trans                    &trans    &trans  &trans  &trans  &trans             &trans          &trans            &trans
-&trans                    &trans                    &trans    &trans  &trans  &trans
+&kp LC(LG(LA(NUMBER_1)))  &kp LG(LA(LC(NUMBER_2)))  &trans                            &trans  &trans  &trans  &kp C_VOLUME_DOWN  &kp C_MUTE      &kp C_VOLUME_UP   &trans
+&trans                    &trans                    &fz_left_both LA(LC(LG(LEFT))) 0  &trans  &trans  &trans  &trans             &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans  &trans
+&trans                    &trans                    &trans                            &trans  &trans  &trans  &trans             &trans          &trans            &trans
+&trans                    &trans                    &trans                            &trans  &trans  &trans
             >;
         };
 
