@@ -327,12 +327,6 @@
             require-prior-idle-ms = <150>;
         };
 
-        rclick_combo {
-            bindings = <&mkp RCLK>;
-            key-positions = <12 13>;
-            require-prior-idle-ms = <150>;
-        };
-
         scroll_down {
             bindings = <&msc SCRL_DOWN>;
             key-positions = <25 24 23>;
@@ -461,6 +455,14 @@
             bindings = <&kt LEFT_SHIFT &mkp LCLK &kt LEFT_SHIFT>;
             label = "SHIFT_LCLICK";
         };
+
+        fz_left: fz_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_GUI &kp LEFT &kt LEFT_GUI>;
+            label = "FZ_LEFT";
+            tap-ms = <200>;
+        };
     };
 
     keymap {
@@ -504,10 +506,10 @@
 
         media {
             bindings = <
-&kp LC(LG(LA(NUMBER_1)))  &kp LG(LA(LC(NUMBER_2)))  &trans  &trans  &trans  &trans  &kp C_VOLUME_DOWN  &kp C_MUTE      &kp C_VOLUME_UP   &trans
-&trans                    &trans                    &trans  &trans  &trans  &trans  &trans             &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans  &trans
-&trans                    &trans                    &trans  &trans  &trans  &trans  &trans             &trans          &trans            &trans
-&trans                    &trans                    &trans  &trans  &trans  &trans
+&kp LC(LG(LA(NUMBER_1)))  &kp LG(LA(LC(NUMBER_2)))  &trans    &trans  &trans  &trans  &kp C_VOLUME_DOWN  &kp C_MUTE      &kp C_VOLUME_UP   &trans
+&trans                    &trans                    &fz_left  &trans  &trans  &trans  &trans             &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans  &trans
+&trans                    &trans                    &trans    &trans  &trans  &trans  &trans             &trans          &trans            &trans
+&trans                    &trans                    &trans    &trans  &trans  &trans
             >;
         };
 
