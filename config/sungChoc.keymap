@@ -354,6 +354,18 @@
             key-positions = <14 15>;
             require-prior-idle-ms = <150>;
         };
+
+        virtual_desktop_l {
+            bindings = <&kp LC(LG(LEFT_ARROW))>;
+            key-positions = <27 28 29>;
+            require-prior-idle-ms = <150>;
+        };
+
+        virtual_desktop_r {
+            bindings = <&kp LC(LG(RIGHT))>;
+            key-positions = <28 29 30>;
+            require-prior-idle-ms = <150>;
+        };
     };
 
     macros {
