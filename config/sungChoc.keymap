@@ -791,10 +791,10 @@
 
         ARDUX {
             bindings = <
-&lt 12 S   &kp T        &kp R      &lt 13 A   &as MINUS  &none           &none  &none  &none  &none
-&none      &kp O        &kp I      &kp Y      &lt 12 E   &sk LEFT_SHIFT  &none  &none  &none  &none  &none  &none
-&sk LCTRL  &kp AT_SIGN  &kp DEL    &as EQUAL  &kp TAB    &none           &none  &none  &none  &none
-&none      &kp SPACE    &kp ENTER  &none      &none      &none
+&lt 12 S     &kp T        &kp R      &lt 13 A   &as MINUS  &none           &none  &none  &none  &none
+&none        &kp O        &kp I      &kp Y      &lt 12 E   &sk LEFT_SHIFT  &none  &none  &none  &none  &none  &none
+&sk LCTRL    &kp AT_SIGN  &kp DEL    &as EQUAL  &kp TAB    &none           &none  &none  &none  &none
+&lt 5 LC(M)  &lt 6 SPACE  &kp ENTER  &none      &none      &none
             >;
         };
 
