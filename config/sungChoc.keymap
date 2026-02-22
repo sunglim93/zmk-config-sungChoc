@@ -376,6 +376,11 @@
             bindings = <&mkp MCLK>;
             key-positions = <15 33>;
         };
+
+        konomu_toggle {
+            bindings = <&tog 9>;
+            key-positions = <31 30 29 28 27>;
+        };
     };
 
     macros {
@@ -578,6 +583,15 @@
 &kp LC(LA(LS(E)))  &kp LC(LA(LS(Z)))                      &kp LC(LA(LS(T)))  &kp LC(LS(LA(B)))  &kp LC(LA(LS(C)))  &ac_vm  &trans  &trans  &trans  &trans  &trans  &trans
 &kp LC(LA(LS(V)))  &hold_tap LA(LS(LC(O))) LA(LS(LC(P)))  &kp LA(LS(LC(S)))  &ac_browser        &kp LS(LC(A))      &trans  &trans  &trans  &trans  &trans
 &trans             &trans                                 &trans             &trans             &trans             &trans
+            >;
+        };
+
+        konomu {
+            bindings = <
+&kp F  &kp D        &kp N  &kp I  &kp G  &none  &none  &none  &none  &none
+&none  &kp S        &kp T  &kp H  &kp E  &kp O  &none  &none  &none  &none  &none  &none
+&kp C  &kp W        &kp R  &kp A  &kp U  &none  &none  &none  &none  &none
+&none  &lt 6 SPACE  &none  &none  &none  &none
             >;
         };
     };
