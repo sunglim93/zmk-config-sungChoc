@@ -385,163 +385,163 @@
         j_combo {
             bindings = <&kp J>;
             key-positions = <0 1>;
-            layers = <10>;
+            layers = <9>;
         };
 
         g_combo {
             bindings = <&kp G>;
             key-positions = <1 2>;
-            layers = <10>;
+            layers = <9>;
         };
 
         f_combo {
             bindings = <&kp F>;
             key-positions = <3 2>;
-            layers = <10>;
+            layers = <9>;
         };
 
         n_combo {
             bindings = <&kp N>;
             key-positions = <11 12>;
-            layers = <10>;
+            layers = <9>;
         };
 
         u_combo {
             bindings = <&kp U>;
             key-positions = <12 13>;
-            layers = <10>;
+            layers = <9>;
         };
 
         c_combo {
             bindings = <&kp C>;
             key-positions = <13 14>;
-            layers = <10>;
+            layers = <9>;
         };
 
         v_combo {
             bindings = <&kp V>;
             key-positions = <0 2>;
-            layers = <10>;
+            layers = <9>;
         };
 
         k_combo {
             bindings = <&kp K>;
             key-positions = <11 13>;
-            layers = <10>;
+            layers = <9>;
         };
 
         h_combo {
             bindings = <&kp H>;
             key-positions = <12 14>;
-            layers = <10>;
+            layers = <9>;
         };
 
         w_combo {
             bindings = <&kp W>;
             key-positions = <0 3>;
-            layers = <10>;
+            layers = <9>;
         };
 
         b_combo {
             bindings = <&kp B>;
             key-positions = <11 14>;
-            layers = <10>;
+            layers = <9>;
         };
 
         x_combo {
             bindings = <&kp X>;
             key-positions = <0 1 2>;
-            layers = <10>;
+            layers = <9>;
         };
 
         d_combo {
             bindings = <&kp D>;
             key-positions = <1 2 2 3>;
-            layers = <10>;
+            layers = <9>;
         };
 
         m_combo {
             bindings = <&kp M>;
             key-positions = <11 12 13>;
-            layers = <10>;
+            layers = <9>;
         };
 
         l_combo {
             bindings = <&kp L>;
             key-positions = <13 14 12>;
-            layers = <10>;
+            layers = <9>;
         };
 
         q_combo {
             bindings = <&kp Q>;
             key-positions = <0 1 3>;
-            layers = <10>;
+            layers = <9>;
         };
 
         p_combo {
             bindings = <&kp P>;
             key-positions = <11 12 14>;
-            layers = <10>;
+            layers = <9>;
         };
 
         z_combo {
             bindings = <&kp Z>;
             key-positions = <0 1 2 3>;
-            layers = <10>;
+            layers = <9>;
         };
 
         exclamation_combo {
             bindings = <&kp EXCL>;
             key-positions = <1 12>;
-            layers = <10>;
+            layers = <9>;
         };
 
         fwslash_combo {
             bindings = <&as SLASH>;
             key-positions = <11 3>;
-            layers = <10>;
+            layers = <9>;
         };
 
         period_combo {
             bindings = <&as PERIOD>;
             key-positions = <13 3>;
-            layers = <10>;
+            layers = <9>;
         };
 
         comma_combo {
             bindings = <&as COMMA>;
             key-positions = <3 12>;
-            layers = <10>;
+            layers = <9>;
         };
 
         quote_combo {
             bindings = <&as SINGLE_QUOTE>;
             key-positions = <3 13 12>;
-            layers = <10>;
+            layers = <9>;
         };
 
         seven_combo {
             bindings = <&kp N7>;
             key-positions = <3 2>;
-            layers = <12>;
+            layers = <11>;
         };
 
         eight_combo {
             bindings = <&kp N8>;
             key-positions = <2 1>;
-            layers = <12>;
+            layers = <11>;
         };
 
         nine_combo {
             bindings = <&kp N9>;
             key-positions = <14 13>;
-            layers = <12>;
+            layers = <11>;
         };
 
         zero_combo {
             bindings = <&kp N0>;
             key-positions = <12 13>;
-            layers = <12>;
+            layers = <11>;
         };
 
         ARDUX_NAV {
