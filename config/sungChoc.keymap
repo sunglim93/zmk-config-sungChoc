@@ -381,6 +381,179 @@
             bindings = <&tog 9>;
             key-positions = <31 30 29 28 27>;
         };
+
+        j_combo {
+            bindings = <&kp J>;
+            key-positions = <0 33>;
+            layers = <9>;
+        };
+
+        k_combo {
+            bindings = <&kp K>;
+            key-positions = <1 33>;
+            layers = <9>;
+        };
+
+        m_combo {
+            bindings = <&kp M>;
+            key-positions = <2 33>;
+            layers = <9>;
+        };
+
+        quote_combo {
+            bindings = <&kp SQT>;
+            key-positions = <3 33>;
+            layers = <9>;
+        };
+
+        minus_combo {
+            bindings = <&kp MINUS>;
+            key-positions = <4 33>;
+            layers = <9>;
+        };
+
+        y_combo {
+            bindings = <&kp Y>;
+            key-positions = <11 33>;
+            layers = <9>;
+        };
+
+        p_combo {
+            bindings = <&kp P>;
+            key-positions = <12 33>;
+            layers = <9>;
+        };
+
+        l_combo {
+            bindings = <&kp L>;
+            key-positions = <13 33>;
+            layers = <9>;
+        };
+
+        period_combo {
+            bindings = <&kp PERIOD>;
+            key-positions = <14 33>;
+            layers = <9>;
+        };
+
+        q_combo {
+            bindings = <&kp Q>;
+            key-positions = <15 33>;
+            layers = <9>;
+        };
+
+        x_combo {
+            bindings = <&kp X>;
+            key-positions = <22 33>;
+            layers = <9>;
+        };
+
+        b_combo {
+            bindings = <&kp B>;
+            key-positions = <23 33>;
+            layers = <9>;
+        };
+
+        v_combo {
+            bindings = <&kp V>;
+            key-positions = <24 33>;
+            layers = <9>;
+        };
+
+        comma_combo {
+            bindings = <&kp COMMA>;
+            key-positions = <25 33>;
+            layers = <9>;
+        };
+
+        z_combo {
+            bindings = <&kp Z>;
+            key-positions = <26 33>;
+            layers = <9>;
+        };
+
+        one_combo {
+            bindings = <&as NUMBER_1>;
+            key-positions = <23 32>;
+            layers = <9>;
+        };
+
+        two_combo {
+            bindings = <&as NUMBER_2>;
+            key-positions = <24 32>;
+            layers = <9>;
+        };
+
+        three_combo {
+            bindings = <&as NUMBER_3>;
+            key-positions = <25 32>;
+            layers = <9>;
+        };
+
+        four_combo {
+            bindings = <&as NUMBER_4>;
+            key-positions = <12 32>;
+            layers = <9>;
+        };
+
+        five_combo {
+            bindings = <&as N5>;
+            key-positions = <13 32>;
+        };
+
+        six_combo {
+            bindings = <&as NUMBER_6>;
+            key-positions = <14 32>;
+            layers = <9>;
+        };
+
+        seven_combo {
+            bindings = <&as N7>;
+            key-positions = <1 32>;
+            layers = <9>;
+        };
+
+        eight_combo {
+            bindings = <&as N8>;
+            key-positions = <2 32>;
+            layers = <9>;
+        };
+
+        nine_combo {
+            bindings = <&as N9>;
+            key-positions = <3 32>;
+            layers = <9>;
+        };
+
+        zero_combo {
+            bindings = <&as N0>;
+            key-positions = <26 32>;
+            layers = <9>;
+        };
+
+        num_period_combo {
+            bindings = <&as PERIOD>;
+            key-positions = <32 10>;
+            layers = <9>;
+        };
+
+        num_eq_combo {
+            bindings = <&as EQUAL>;
+            key-positions = <32 22>;
+            layers = <9>;
+        };
+
+        num_minus_combo {
+            bindings = <&kp KP_MINUS>;
+            key-positions = <0 32>;
+            layers = <9>;
+        };
+
+        num_div_combo {
+            bindings = <&kp SLASH>;
+            key-positions = <11 32>;
+            layers = <9>;
+        };
     };
 
     macros {
