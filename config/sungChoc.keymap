@@ -454,12 +454,6 @@
             layers = <9>;
         };
 
-        d_combo {
-            bindings = <&kp D>;
-            key-positions = <1 2 2 3>;
-            layers = <9>;
-        };
-
         m_combo {
             bindings = <&kp M>;
             key-positions = <11 12 13>;
@@ -583,6 +577,12 @@
         toggle_ardux {
             bindings = <&tog 9>;
             key-positions = <27 28 29 30 31>;
+        };
+
+        d_combo {
+            bindings = <&kp D>;
+            key-positions = <2 3 1>;
+            layers = <9>;
         };
     };
 
