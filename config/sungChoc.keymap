@@ -547,7 +547,7 @@
         ARDUX_NAV {
             bindings = <&tog 13>;
             key-positions = <14 2 12>;
-            layers = <13>;
+            layers = <9 13>;
         };
 
         backspace_combo {
