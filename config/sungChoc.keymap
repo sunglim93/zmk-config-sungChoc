@@ -548,7 +548,7 @@
 
         backspace_combo {
             bindings = <&kp BACKSPACE>;
-            key-positions = <2 14>;
+            key-positions = <14 3>;
             layers = <9>;
         };
 
@@ -793,10 +793,10 @@
 
         ARDUX {
             bindings = <
-&lt 12 S     &kp T        &kp R      &lt 13 A   &as MINUS  &none           &none  &none  &none  &none
-&none        &kp O        &kp I      &kp N      &lt 12 E   &sk LEFT_SHIFT  &none  &none  &none  &none  &none  &none
-&sk LCTRL    &kp AT_SIGN  &kp DEL    &as EQUAL  &kp TAB    &none           &none  &none  &none  &none
-&lt 5 LC(M)  &lt 6 SPACE  &kp ENTER  &none      &none      &none
+&lt 12 S     &kp T        &kp R        &lt 13 A   &as MINUS  &none           &none  &none  &none  &none
+&sl 8        &kp O        &kp I        &kp N      &lt 12 E   &sk LEFT_SHIFT  &none  &none  &none  &none  &none  &none
+&sk LCTRL    &kp AT_SIGN  &kp DEL      &as EQUAL  &kp TAB    &none           &none  &none  &none  &none
+&lt 5 LC(M)  &lt 6 SPACE  &lt 2 ENTER  &none      &none      &none
             >;
         };
 
@@ -829,10 +829,10 @@
 
         ARDUX_NAV {
             bindings = <
-&kp PG_UP  &kp END        &kp UP_ARROW  &kp HOME        &trans     &trans  &trans  &trans  &trans  &trans
-&trans     &kp PAGE_DOWN  &kp LEFT      &kp DOWN_ARROW  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans     &trans         &trans        &trans          &trans     &trans  &trans  &trans  &trans  &trans
-&trans     &trans         &trans        &trans          &trans     &trans
+&kp PG_UP  &hold_tap LC(END) END  &kp UP_ARROW  &hold_tap LC(HOME) HOME  &trans     &trans  &trans  &trans  &trans  &trans
+&trans     &kp PAGE_DOWN          &kp LEFT      &kp DOWN_ARROW           &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans                 &trans        &trans                   &trans     &trans  &trans  &trans  &trans  &trans
+&trans     &trans                 &trans        &trans                   &trans     &trans
             >;
         };
     };
