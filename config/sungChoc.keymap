@@ -547,7 +547,7 @@
         };
 
         backspace_combo {
-            bindings = <&kp BACKSPACE>;
+            bindings = <&hold_tap LC(BACKSPACE) BACKSPACE>;
             key-positions = <14 3>;
             layers = <9>;
         };
