@@ -6,6 +6,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+&sk { release-after-ms = <2000>; };
+
 / {
     behaviors {
         hrm: hrm {
@@ -220,7 +222,7 @@
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
             require-prior-idle-ms = <200>;
-            layers = <0>;
+            layers = <0 7>;
         };
 
         tasks {
@@ -400,8 +402,8 @@
             layers = <9>;
         };
 
-        n_combo {
-            bindings = <&kp N>;
+        y_combo {
+            bindings = <&kp Y>;
             key-positions = <11 12>;
             layers = <9>;
         };
@@ -792,7 +794,7 @@
         ARDUX {
             bindings = <
 &lt 12 S     &kp T        &kp R      &lt 13 A   &as MINUS  &none           &none  &none  &none  &none
-&none        &kp O        &kp I      &kp Y      &lt 12 E   &sk LEFT_SHIFT  &none  &none  &none  &none  &none  &none
+&none        &kp O        &kp I      &kp N      &lt 12 E   &sk LEFT_SHIFT  &none  &none  &none  &none  &none  &none
 &sk LCTRL    &kp AT_SIGN  &kp DEL    &as EQUAL  &kp TAB    &none           &none  &none  &none  &none
 &lt 5 LC(M)  &lt 6 SPACE  &kp ENTER  &none      &none      &none
             >;
