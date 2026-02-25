@@ -345,6 +345,7 @@
             bindings = <&kp TAB>;
             key-positions = <11 12>;
             layers = <0>;
+            require-prior-idle-ms = <200>;
         };
 
         lclick_combo {
