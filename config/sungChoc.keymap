@@ -8,6 +8,11 @@
 
 &sk { quick-release; };
 
+&lt {
+    quick-tap-ms = <150>;
+    tapping-term-ms = <250>;
+};
+
 / {
     behaviors {
         hrm: hrm {
