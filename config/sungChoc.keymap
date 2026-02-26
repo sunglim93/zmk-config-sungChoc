@@ -419,7 +419,7 @@
 
         y_combo {
             bindings = <&kp Y>;
-            key-positions = <11 12>;
+            key-positions = <3 1>;
             layers = <9>;
         };
 
@@ -563,7 +563,7 @@
 
         backspace_combo {
             bindings = <&hold_tap LC(BACKSPACE) BACKSPACE>;
-            key-positions = <14 3>;
+            key-positions = <14 2>;
             layers = <9>;
         };
 
