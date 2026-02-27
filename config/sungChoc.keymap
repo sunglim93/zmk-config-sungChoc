@@ -221,10 +221,10 @@
             ignore-modifiers;
         };
 
-        sticky_layer: sticky_layer {
+        os_shift_layer_change: os_shift_layer_change {
             compatible = "zmk,behavior-hold-tap";
-            label = "STICKY_LAYER";
-            bindings = <&mo>, <&sk>;
+            label = "OS_SHIFT_LAYER_CHANGE";
+            bindings = <&mo>, <&sticky_shift>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -729,6 +729,13 @@
             bindings = <&kt LEFT_GUI &kp LEFT &kt LEFT_GUI>;
             label = "FZ_LEFT";
             tap-ms = <100>;
+        };
+
+        sticky_shift: sticky_shift {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk LEFT_SHIFT>;
+            label = "STICKY_SHIFT";
         };
     };
 
