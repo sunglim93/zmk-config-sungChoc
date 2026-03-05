@@ -64,6 +64,8 @@
             label = "BURP_REP";
             #binding-cells = <0>;
             bindings = <&kp LC(LS(R))>, <&kp LC(R)>;
+
+            tapping-term-ms = <300>;
         };
 
         burp_proxy: burp_proxy {
@@ -71,6 +73,8 @@
             label = "BURP_PROXY";
             #binding-cells = <0>;
             bindings = <&kp LS(LC(P))>, <&kp LC(T)>;
+
+            tapping-term-ms = <300>;
         };
 
         burp_org: burp_org {
@@ -78,6 +82,8 @@
             label = "BURP_ORG";
             #binding-cells = <0>;
             bindings = <&kp LC(LS(O))>, <&kp LC(O)>;
+
+            tapping-term-ms = <300>;
         };
 
         burp_int: burp_int {
@@ -85,6 +91,8 @@
             label = "BURP_INT";
             #binding-cells = <0>;
             bindings = <&hold_tap LC(P) LC(LS(I))>, <&kp LC(I)>;
+
+            tapping-term-ms = <300>;
         };
 
         burp_send: burp_send {
@@ -92,6 +100,8 @@
             label = "BURP_SEND";
             #binding-cells = <0>;
             bindings = <&kp LC(SPACE)>, <&kp LC(LS(SPACE))>;
+
+            tapping-term-ms = <300>;
         };
 
         burp_dash: burp_dash {
@@ -99,6 +109,8 @@
             label = "BURP_DASH";
             #binding-cells = <0>;
             bindings = <&hold_tap LC(LS(N9)) LS(LC(D))>, <&kp LC(LS(T))>;
+
+            tapping-term-ms = <300>;
         };
 
         burp_fwd: burp_fwd {
@@ -106,6 +118,8 @@
             label = "BURP_FWD";
             #binding-cells = <0>;
             bindings = <&kp LC(F)>, <&kp LC(LS(F))>;
+
+            tapping-term-ms = <300>;
         };
 
         burp_notes_htmlE: burp_notes_htmlE {
@@ -113,6 +127,8 @@
             label = "BURP_NOTES_HTMLE";
             #binding-cells = <0>;
             bindings = <&kp LC(LA(N))>, <&kp LC(LA(H))>;
+
+            tapping-term-ms = <300>;
         };
 
         ac_vm: ac_vm {
