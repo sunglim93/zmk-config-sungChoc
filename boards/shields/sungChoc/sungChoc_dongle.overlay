@@ -2,8 +2,9 @@
 
 / {
     chosen {
-        zmk,split-role = "dongle";
         zmk,kscan = &kscan_dummy;
+        zmk,matrix-transform = &dummy_transform;
+        zmk,split-role = "dongle";
     };
 
     kscan_dummy: kscan {
@@ -13,7 +14,7 @@
         col-gpios = <&gpio0 1 GPIO_ACTIVE_HIGH>;
     };
 
-    default_transform: keymap_transform_0 {
+    dummy_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <1>;
         rows = <1>;
