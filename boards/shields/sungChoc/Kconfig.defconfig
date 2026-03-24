@@ -1,7 +1,7 @@
 if SHIELD_SUNGCHOC_DONGLE
 
 config ZMK_KEYBOARD_NAME
-    default "Sung Choc Dongle"
+    default "Sung Choc"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
@@ -19,5 +19,5 @@ config BT_MAX_CONN
 # Set this to the same number as BT_MAX_CONN
 config BT_MAX_PAIRED
     default 5
-    
+
 endif
