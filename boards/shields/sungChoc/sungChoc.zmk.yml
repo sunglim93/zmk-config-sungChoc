@@ -22,3 +22,4 @@ requires:
 siblings:
   - sungChoc_left
   - sungChoc_right
+  - sungChoc_dongle
