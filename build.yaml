@@ -23,5 +23,5 @@ include:
     shield: sungChoc_left
   - board: nice_nano_v2
     shield: sungChoc_right
-  - board: seeeduino_xiao_ble
+  - board: nice_nano_v2
     shield: sungChoc_dongle
