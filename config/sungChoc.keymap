@@ -291,7 +291,7 @@
 
         quotes {
             bindings = <&as APOS>;
-            key-positions = <19 20>;
+            key-positions = <19 20 18>;
             require-prior-idle-ms = <200>;
         };
 
@@ -627,6 +627,11 @@
             key-positions = <31 30>;
             require-prior-idle-ms = <200>;
         };
+
+        maple_switch {
+            bindings = <&tog 14>;
+            key-positions = <11 12 13 14 17 18 19 20>;
+        };
     };
 
     macros {
@@ -881,6 +886,15 @@
 &trans     &kp PAGE_DOWN          &kp LEFT      &kp DOWN_ARROW           &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans     &trans                 &trans        &trans                   &trans     &trans  &trans  &trans  &trans  &trans
 &trans     &trans                 &trans        &trans                   &trans     &trans
+            >;
+        };
+
+        maplestory {
+            bindings = <
+&kp Q   &kp W      &kp E      &kp R   &kp T   &kp Y   &kp U  &kp UP_ARROW  &kp O     &kp P
+&trans  &kp A      &kp S      &kp D   &kp F   &kp G   &kp H  &kp LEFT      &kp DOWN  &kp RIGHT  &kp L  &trans
+&kp Z   &kp X      &kp C      &kp V   &kp B   &kp N   &kp M  &kp COMMA     &kp DOT   &kp FSLH
+&trans  &kp SPACE  &kp ENTER  &kp N1  &kp N2  &kp N3
             >;
         };
     };
